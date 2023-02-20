@@ -46,7 +46,7 @@ jobs:
 
       - name: Install WSL
         if: runner.os == 'windows'
-        uses: Vampire/setup-wsl@8a65751d97e5ef9d65d73e0e3cad811633b50587
+        uses: Vampire/setup-wsl@188b420ddc69713cdd990715aba161526aed7f6d
         with:
           distribution: Ubuntu-16.04
           wsl-shell-user: runner
